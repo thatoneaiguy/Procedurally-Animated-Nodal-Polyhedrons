@@ -20,7 +20,7 @@ DOT_COLOR = (100, 100, 100)
 
 # Variables
 node_count = 1  # Start with a single node
-radius = 200  # Radius of the polygon
+radius = 350  # Radius of the polygon
 center = (WIDTH // 2, HEIGHT // 2)  # Center of the screen
 transition_duration = 1  # Duration in seconds for transitions
 fps = 60  # Frames per second
