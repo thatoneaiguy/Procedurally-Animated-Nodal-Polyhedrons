@@ -38,12 +38,6 @@ DOT_COLOR = (0, 0, 0)
 This makes the lines very disticnt to everything else on screen.
 
 ## Setup
-1. Make sure you have [python]() installed
-2. Paste in the code in [main.py]() into your dev window of choice. This can just be a text document renamed after putting the code in to end in .py, however for that you must have show file extensions turned on.
+1. Make sure you have [python](https://www.python.org/) installed
+2. Paste in the code in [main.py](https://github.com/thatoneaiguy/Procedurally-Animated-Nodal-Polyhedrons/blob/main/main.py) into your dev window of choice. This can just be a text document renamed after putting the code in to end in .py, however for that you must have show file extensions turned on.
 3. Run the program
-
-Alternatly
-1. Go to the [releases]() tab
-2. Download the latest `.exe`
-3. Run the program
-However with this method, you cannot edit the code
