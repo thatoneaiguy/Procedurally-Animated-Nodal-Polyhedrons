@@ -16,7 +16,7 @@ At a base level, there are two main controls you need to know, and they're both 
 
 ### However, this can be more than just scrolling
 If you want to push this simulation to its limits ( really just pygame's limits combined with your pc ), you can spawn in a specific amount of nodes.
-On line [] there is a variable called `node_count`. This defaults to `10`, because i think it looks nice when you start the program, but it can be used to spawn in a specific amount of nodes on startup.
+On line 22 there is a variable called `node_count`. This defaults to `10`, because i think it looks nice when you start the program, but it can be used to spawn in a specific amount of nodes on startup.
 
 Based on the default `radius` value of `350`
 
