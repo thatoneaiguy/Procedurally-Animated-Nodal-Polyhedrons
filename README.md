@@ -13,7 +13,6 @@ I don't like complex design, so this is really easy to use at a base level, but 
 At a base level, there are two main controls you need to know, and they're both very logical.
 - To add nodes, scroll up ( or arrow key up )
 - To remove nodes, scroll down ( or arrow key down )
-- hold control while using arrow keys to only add a singular node
 
 ### However, this can be more than just scrolling
 If you want to push this simulation to its limits ( really just pygame's limits combined with your pc ), you can spawn in a specific amount of nodes.
