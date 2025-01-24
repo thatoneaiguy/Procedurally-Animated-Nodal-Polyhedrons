@@ -14,19 +14,19 @@ clock = pygame.time.Clock()
 
 # Colors
 BACKGROUND_COLOR = (30, 30, 30)
-NODE_COLOR = (255, 255, 255)
-LINE_COLOR = (255, 255, 255)
+NODE_COLOR = (56, 117, 174)
+LINE_COLOR = (90, 167, 229)
 DOT_COLOR = (100, 100, 100)
 
 # Variables
-node_count = 1  # Start with a single node
+node_count = 10 # Start with a single node
 radius = 350  # Radius of the polygon
 center = (WIDTH // 2, HEIGHT // 2)  # Center of the screen
-transition_duration = 1  # Duration in seconds for transitions
+transition_duration = 100  # Duration in seconds for transitions
 fps = 60  # Frames per second
 
 # Background dots
-num_dots = 100
+num_dots = 250
 dots = [{"pos": (random.randint(0, WIDTH), random.randint(0, HEIGHT)), "original": None} for _ in range(num_dots)]
 for dot in dots:
     dot["original"] = dot["pos"]  # Store the original positions
@@ -174,9 +174,45 @@ while running:
                 # Trim current_positions to match the reduced node count
                 current_positions = current_positions[:node_count]
 
-                # Update target positions for new node count
+            # Update target positions for new node count
             target_positions = calculate_node_positions(node_count)
             elapsed_time = 0  # Reset transition timer
+            print(node_count)
+
+    # Handle keyboard input
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_UP]:
+        node_count += 1
+
+        # Calculate new positions for all nodes
+        new_positions = calculate_node_positions(node_count)
+
+        if len(new_positions) > len(current_positions):
+            # Determine the opposite position of the last node
+            if len(current_positions) > 0:
+                last_x, last_y = current_positions[-1]
+                opposite_x = 2 * center[0] - last_x
+                opposite_y = 2 * center[1] - last_y
+            else:
+                opposite_x, opposite_y = center  # Default to center if no nodes exist
+
+            # Add the new node at the opposite position
+            current_positions.append((opposite_x, opposite_y))
+
+        # Update target positions for new node count
+        target_positions = calculate_node_positions(node_count)
+        elapsed_time = 0  # Reset transition timer
+        print(node_count)
+
+    elif keys[pygame.K_DOWN] and node_count > 1:
+        node_count -= 1
+        # Trim current_positions to match the reduced node count
+        current_positions = current_positions[:node_count]
+
+        # Update target positions for new node count
+        target_positions = calculate_node_positions(node_count)
+        elapsed_time = 0  # Reset transition timer
+        print(node_count)
 
     # Update positions during the transition
     if current_positions != target_positions:
